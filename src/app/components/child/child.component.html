@@ -1,0 +1,55 @@
+<div>
+  <h2>Child</h2>
+  <p>{{ childData }}</p>
+  <!-- one-way binding: outputs data on event change -->
+  <input type="text" (input)="onInput($event)" />
+  <!-- two-way binding: gets input from assigned variable and also outputs to the same variable -->
+  <input type="text" [(ngModel)]="childData" />
+
+  <br /><br />
+  <button mat-raised-button color="primary" (click)="btnClicked()">
+    Button
+  </button>
+</div>
+<hr />
+<div [ngStyle]="{ backgroundColor: getColor() }">
+  <br /><br />
+  <h3>Assignment 2:</h3>
+  <label>Username</label><br />
+  <input type="text" [(ngModel)]="username" />
+  <br />
+  <span *ngIf="!(username === ''); else noUsername">{{ username }}</span>
+  <ng-template #noUsername>
+    <span>No username</span>
+  </ng-template>
+  <br />
+  <button
+    mat-raised-button
+    [disabled]="username.trim() === ''"
+    (click)="resetInput()"
+  >
+    Reset
+  </button>
+</div>
+<hr />
+<div>
+  <h3>Assignment 3</h3>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="toggleShowSecretPassword()"
+  >
+    Display Details
+  </button>
+  <p *ngIf="showDisplayDetails">Secret password = tuna</p>
+  <ul>
+    <li
+      *ngFor="let msg of logArray, let i to index"
+      [ngStyle]="{ backgroundColor: i > 4 ? 'blue' : 'transparent' }"
+      [ngClass]="{white : i > 4}"
+    >
+      {{ msg }}
+    </li>
+  </ul>
+</div>
+<hr />

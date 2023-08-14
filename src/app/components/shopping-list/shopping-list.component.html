@@ -1,0 +1,10 @@
+<app-shopping-edit></app-shopping-edit>
+<hr />
+<ul *ngFor="let ingredient of ingredients">
+  <mat-card>
+    <a 
+  style="cursor: pointer" 
+  >
+ {{ingredient.name}} ({{ingredient.amount}})</a>
+</mat-card>
+</ul>

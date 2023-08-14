@@ -1,0 +1,12 @@
+<button>New Recipe</button>
+<br />
+<div *ngFor="let recipe of recipes">
+  <mat-card appearance="raised">
+    <a href="">
+      <mat-card-title>{{ recipe.name }}</mat-card-title>
+      <mat-card-subtitle>{{ recipe.description }}</mat-card-subtitle>
+      <img [src]="recipe.imagePath" alt="" style="max-height: 50px" />
+    </a>
+  </mat-card>
+</div>
+<app-recipe-item></app-recipe-item>
