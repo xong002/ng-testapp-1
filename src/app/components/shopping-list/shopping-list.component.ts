@@ -13,4 +13,8 @@ export class ShoppingListComponent {
   ];
 
   constructor(){}
+
+  addIngredient(i : Ingredient){
+    this.ingredients.push(i);
+  }
 }

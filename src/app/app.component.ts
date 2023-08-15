@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'testapp';
   parentData : string = "";
+  view = "recipes";
 
   parentFn(event: any){
     this.parentData = event;
     console.log(event)
+  }
+
+  displayView(event: string){
+    this.view = event;    
   }
 }

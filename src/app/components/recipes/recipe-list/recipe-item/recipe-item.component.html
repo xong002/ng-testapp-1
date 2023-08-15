@@ -1,1 +1,11 @@
-<p>recipe-item works!</p>
+<div>
+  <br />
+  <mat-card appearance="raised" >
+    <a href="#" (click)="selectRecipe()">
+      <mat-card-title>{{ recipe.name }}</mat-card-title>
+      <mat-card-subtitle>{{ recipe.description }}</mat-card-subtitle>
+      <img [src]="recipe.imagePath" alt="" style="max-height: 50px" />
+    </a>
+  </mat-card>
+  <br />
+</div>

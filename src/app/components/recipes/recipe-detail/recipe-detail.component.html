@@ -1,10 +1,16 @@
-<h2>Recipe Name</h2>
-<button mat-button [matMenuTriggerFor]="manage">Manage<mat-icon>keyboard_arrow_down</mat-icon></button>
-<mat-menu #manage="">
+<mat-card appearance="raised" >
+  <h2>Recipe Name</h2>
+  <button mat-button [matMenuTriggerFor]="manage">
+    Manage<mat-icon>keyboard_arrow_down</mat-icon>
+  </button>
+  <mat-menu #manage="">
     <button mat-menu-item>Item 1</button>
     <button mat-menu-item>Item 2</button>
-</mat-menu>
-<br>
-<span>Description</span>
-<br>
-<span>Ingredients</span>
+  </mat-menu>
+  <div *ngIf="recipe != null">
+    <br />
+    <span>Description: {{ recipe.description }}</span>
+    <br />
+    <span>Ingredients: </span>
+  </div>
+</mat-card>

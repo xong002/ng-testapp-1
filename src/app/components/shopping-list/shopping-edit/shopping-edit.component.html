@@ -1,15 +1,15 @@
 <form>
   <mat-form-field>
     <mat-label for="name">Name</mat-label>
-    <input matInput type="text" id="name" />
+    <input matInput type="text" id="name" #nameInput/>
   </mat-form-field>
   <br>
   <mat-form-field>
     <mat-label for="amount">Amount</mat-label>
-    <input matInput type="number" id="amount" />
+    <input matInput type="number" id="amount" #amountInput/>
   </mat-form-field>
   <div>
-    <button mat-raised-button color="primary" type="submit">Add</button>&nbsp;&nbsp;
+    <button mat-raised-button color="primary" type="submit" (click)="addIngredient()">Add</button>&nbsp;&nbsp;
     <button mat-raised-button color="warn" type="button">Delete</button>&nbsp;&nbsp;
     <button mat-raised-button color="basic" type="button">Clear</button>
   </div>

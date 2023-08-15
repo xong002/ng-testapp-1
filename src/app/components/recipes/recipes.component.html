@@ -1,12 +1,17 @@
 <table>
   <ng-container matColumnDef="recipeList">
-    <td mat-cell>
-      <app-recipe-list></app-recipe-list>
+    <td mat-cell width="25%" height="100%">
+      <app-recipe-list (showRecipeEvent)="showRecipeDetails($event)"></app-recipe-list>
     </td>
   </ng-container>
   <ng-container matColumnDef="recipeDetail">
-    <td mat-cell>
-        <app-recipe-detail></app-recipe-detail>
+    <td mat-cell width="25%" height="100%">
+        <app-recipe-detail *ngIf="recipe; else selectRecipe" [recipe]="recipe"></app-recipe-detail>
+        <ng-template #selectRecipe>
+          <p>
+            Please select recipe!
+          </p>
+        </ng-template>
     </td>
   </ng-container>
 </table>
