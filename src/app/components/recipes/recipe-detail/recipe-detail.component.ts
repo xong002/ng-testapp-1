@@ -1,5 +1,8 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
+import { ShoppingListService } from '../../shopping-list/shopping-list.service';
+import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -7,9 +10,20 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent {
-  @Input() recipe! : Recipe;
+  @Input() recipe : Recipe;
 
-  ngOnChanges(change :SimpleChanges){
-    // console.log(this.recipe);
+  constructor(private recipeService : RecipeService, private slService : ShoppingListService){}
+
+  ngOnInit(){
   }
+
+  addToShoppingList(){
+    this.recipe.ingredients.forEach(
+      (i : Ingredient) => {
+        this.slService.addIngredients(i);
+      }
+    )
+  }
+
+  
 }

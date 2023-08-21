@@ -6,7 +6,8 @@
   </ng-container>
   <ng-container matColumnDef="recipeDetail">
     <td mat-cell width="25%" height="100%">
-        <app-recipe-detail *ngIf="recipe; else selectRecipe" [recipe]="recipe"></app-recipe-detail>
+        <app-recipe-detail *ngIf="recipe; else selectRecipe"
+        [recipe]="recipe"></app-recipe-detail>
         <ng-template #selectRecipe>
           <p>
             Please select recipe!

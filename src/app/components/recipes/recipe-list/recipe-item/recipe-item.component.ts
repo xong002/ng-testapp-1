@@ -8,7 +8,7 @@ import { RecipeService } from '../../recipe.service';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent {
-  @Input() recipe!: Recipe;
+  @Input() recipe: Recipe;
   // @Output() showRecipeEvent = new EventEmitter<Recipe>();
 
   constructor(private recipeService: RecipeService) { }
