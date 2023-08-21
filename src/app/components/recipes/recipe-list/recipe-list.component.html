@@ -1,6 +1,7 @@
-<button>New Recipe</button>
+<button routerLink="/recipes/new">New Recipe</button>
 <br />
 <app-recipe-item
-  *ngFor="let recipe of recipes"
+  *ngFor="let recipe of recipes; let i = index"
   [recipe] = "recipe"
+  [index]="i"
 ></app-recipe-item>

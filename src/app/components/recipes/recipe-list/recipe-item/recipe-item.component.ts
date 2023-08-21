@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 import { RecipeService } from '../../recipe.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-item',
@@ -9,12 +10,15 @@ import { RecipeService } from '../../recipe.service';
 })
 export class RecipeItemComponent {
   @Input() recipe: Recipe;
-  // @Output() showRecipeEvent = new EventEmitter<Recipe>();
+  @Input() index: number;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private router: Router) { }
 
   selectRecipe() {
-    // this.showRecipeEvent.emit(this.recipe);
     this.recipeService.recipeSelected.emit(this.recipe);
+    const index = this.recipeService.getRecipes().findIndex((recipe) => {
+      return this.recipe == recipe;
+    });
+    this.router.navigate(['/recipes/', index]);
   }
 }
