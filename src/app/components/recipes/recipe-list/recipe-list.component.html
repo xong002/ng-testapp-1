@@ -1,4 +1,6 @@
 <button>New Recipe</button>
 <br />
-  <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" (showRecipeEvent)="showRecipe($event)"></app-recipe-item>
-
+<app-recipe-item
+  *ngFor="let recipe of recipes"
+  [recipe]="recipe"
+></app-recipe-item>
