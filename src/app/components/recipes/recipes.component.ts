@@ -14,10 +14,10 @@ export class RecipesComponent {
   constructor(private recipeService : RecipeService){}
   
   ngOnInit(){
-    this.recipeService.recipeSelected.subscribe(
-      (recipe: Recipe) => {
-        this.recipe = recipe;
-      }
-    )
+    // this.recipeService.recipeSelected.subscribe(
+    //   (recipe: Recipe) => {
+    //     this.recipe = recipe;
+    //   }
+    // )
   }
 }

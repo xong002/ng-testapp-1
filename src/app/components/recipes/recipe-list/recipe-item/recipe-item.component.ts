@@ -14,11 +14,11 @@ export class RecipeItemComponent {
 
   constructor(private recipeService: RecipeService, private router: Router) { }
 
-  selectRecipe() {
-    this.recipeService.recipeSelected.emit(this.recipe);
-    const index = this.recipeService.getRecipes().findIndex((recipe) => {
-      return this.recipe == recipe;
-    });
-    this.router.navigate(['/recipes/', index]);
-  }
+  // selectRecipe() {
+  //   this.recipeService.recipeSelected.next(this.recipe);
+  //   const index = this.recipeService.getRecipes().findIndex((recipe) => {
+  //     return this.recipe == recipe;
+  //   });
+  //   this.router.navigate(['/recipes/', index]);
+  // }
 }
